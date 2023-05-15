@@ -1,0 +1,40 @@
+TRABALHO OPCIONAL 
+
+PARTE 1 
+
+Implementação do diagrama de UML do sistema bancário.
+
+👉 Crie todos as classes e relacionamentos exatamente como mostradas no diagrama.
+👉 Garanta que as cardinalidades mínimas de 1 sejam respeitadas pelo código.
+👉 Faça os métodos add e remove para os relacionamentos nas collections.
+👉 Sempre que trabalhar com os relacionamentos, lembres-se de garantir a bidirecionalidade via código (durante a criação dos objetos) sempre que o relacionamento for bidirecional.
+👉 Via código garantir que a tranferência não ser feita para si mesma.
+
+
+PARTE 2 
+
+Pegue o projeto Locadora-v2 que foi fornecido e altere-o para comportar os seguintes requisitos:
+
+👉 Sua empresa foi contratada para criar um sistema de locadora de discos de vinil raros.
+👉 Sobre o locatário, deseja-se armazenar o nome e o CPF.
+👉 Sobre o disco deseja-se armazenar o título, o artista, o ano de lançamento, o preço atual, o valor da diária e se ele está danificado ou não.
+👉 Sobre uma locação de disco deve armazenar: a data de início, a data de fim, se está paga  e se o disco foi devolvido danificado.
+👉 Um disco danificado não pode ser locado (caso haja a tentativa de locar um disco danificado, uma exceção deverá ser lançada).
+👉 No cálculo do valor da locação, caso um disco tenha sido danificado pelo locatário, além do valor correspondentes aos dias de aluguel, deve-se somar o valor do preço atual do vinil raro na cobrança.
+
+Testar o aluguel de um disco na classe Main do projeto.
+
+
+PARTE 3 
+
+Após criar o sugerido na parte 2, copie, por segurança, o diretório do projeto em um outro 
+diretório para não perder o que já está funcionando.
+
+Faça as seguintes modificações no código:
+
+👉 Use o padrão Abastract Factory para garantir que as famílias de objeto sejam consistentes entre si (uma factory de veículo garante que só entidades e fachada relacionadas à locação de veículos seriam criadas; idem para uma factory de discos).
+👉 Use o padrão Singleton para garantir que apenas uma factory será criada (a instância da factory será criada fixa no código, mas, numa aplicação real, seria lida de um XML, variável de ambiente, ou algo do tipo).
+👉 As factories devem criar todos os tipos de objeto: locatário, locável, locação e o fachada.
+👉 Remova o método de criação do objeto Locacao que estão nos fachadas (tanto interface quanto nas classes concretas  da parte de veículo e disco).
+
+
