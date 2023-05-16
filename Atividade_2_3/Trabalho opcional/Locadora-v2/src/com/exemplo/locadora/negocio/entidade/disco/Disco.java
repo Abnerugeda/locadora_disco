@@ -1,12 +1,14 @@
 package com.exemplo.locadora.negocio.entidade.disco;
 
-public class Disco {
-    private String titulo;
-    private String artista;
-    private String ano_lancamento;
-    private Double preco_atual;
-    private Double valor_diaria;
-    private Boolean danificado;
+import com.exemplo.locadora.negocio.entidade.interfaces.Locavel;
+
+public class Disco extends Locavel {
+    private String              titulo;
+    private String              artista;
+    private String              ano_lancamento;
+    private Double              preco_atual;
+    private Double              valor_diaria;
+    private Boolean              danificado;
 
     public String getTitulo() {
         return titulo;
@@ -56,4 +58,5 @@ public class Disco {
     public void setDanificado(boolean danificado) {
         this.danificado = danificado;
     }
+    public boolean getDanificado() { return danificado; }
 }
