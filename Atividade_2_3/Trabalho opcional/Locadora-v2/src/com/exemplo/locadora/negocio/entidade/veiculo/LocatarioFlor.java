@@ -2,11 +2,11 @@ package com.exemplo.locadora.negocio.entidade.veiculo;
 
 import com.exemplo.locadora.negocio.entidade.interfaces.Locatario;
 
-public class LocatarioVeiculo implements Locatario {
+public class LocatarioFlor implements Locatario {
     private String nome;
     private String cpf;
 
-    public LocatarioVeiculo(String nome, String cpf) {
+    public LocatarioFlor(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }

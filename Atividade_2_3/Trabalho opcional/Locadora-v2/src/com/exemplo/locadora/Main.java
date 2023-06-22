@@ -3,9 +3,9 @@ package com.exemplo.locadora;
 import com.exemplo.locadora.negocio.entidade.disco.*;
 import com.exemplo.locadora.negocio.entidade.interfaces.LocadoraFactory;
 import com.exemplo.locadora.negocio.entidade.interfaces.Locatario;
-import com.exemplo.locadora.negocio.entidade.interfaces.Veiculo;
-import com.exemplo.locadora.negocio.entidade.veiculo.LocacaoVeiculo;
-import com.exemplo.locadora.negocio.entidade.veiculo.VeiculoLocadoraFactory;
+import com.exemplo.locadora.negocio.entidade.interfaces.Flor;
+import com.exemplo.locadora.negocio.entidade.veiculo.LocacaoFlor;
+import com.exemplo.locadora.negocio.entidade.veiculo.FlorLocadoraFactory;
 
 import java.time.LocalDate;
 
@@ -24,32 +24,32 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
-        LocadoraFactory factory = VeiculoLocadoraFactory.getInstance();
+        LocadoraFactory factory = FlorLocadoraFactory.getInstance();
 
-        // Criar objetos da família de locação de veículos
+        // Criar objetos da família de locação de flores
         Locatario locatarioVeiculo = factory.createLocatario("João", "12345678900");
-        Veiculo veiculo = factory.createVeiculo("Modelo do Veículo", "Marca do Veículo", 100.0, false);
+        Flor flor = factory.createVeiculo("Modelo da Flor", "Marca da Flor", 100.0, false);
         LocalDate dataInicioVeiculo = LocalDate.of(2023, 5, 1);
         LocalDate dataFimVeiculo = LocalDate.of(2023, 5, 5);
-        LocacaoVeiculo locacaoVeiculo = (LocacaoVeiculo) factory.createLocacao(dataInicio, dataFim, true, false);
+        LocacaoFlor locacaoVeiculo = (LocacaoFlor) factory.createLocacao(dataInicio, dataFim, true, false);
 
         try {
-            double valorLocacao = calcularValorLocacao(veiculo, locacao);
+            double valorLocacao = calcularValorLocacao(flor, locacao);
             System.out.println("Valor da locação: R$" + valorLocacao);
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
     }
 
-    public static double calcularValorLocacao(Veiculo veiculo, Locacao locacao) throws Exception {
-        if (veiculo.isDanificado()) {
-            throw new Exception("Não é possível locar um veículo danificado.");
+    public static double calcularValorLocacao(Flor flor, Locacao locacao) throws Exception {
+        if (flor.isDanificado()) {
+            throw new Exception("Não é possível locar uma flor danificada.");
         }
 
-        double valorLocacao = locacao.getDataInicio().until(locacao.getDataFim()).getDays() * veiculo.getPrecoDiaria();
+        double valorLocacao = locacao.getDataInicio().until(locacao.getDataFim()).getDays() * flor.getPrecoDiaria();
 
         if (locacao.isDevolvidoDanificado()) {
-            valorLocacao += veiculo.getPrecoDiaria();
+            valorLocacao += flor.getPrecoDiaria();
         }
 
         return valorLocacao;

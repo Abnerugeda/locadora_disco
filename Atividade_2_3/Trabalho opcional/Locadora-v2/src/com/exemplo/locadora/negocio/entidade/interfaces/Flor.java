@@ -1,6 +1,6 @@
 package com.exemplo.locadora.negocio.entidade.interfaces;
 
-public interface Veiculo {
+public interface Flor {
     String getModelo();
     String getMarca();
     double getPrecoDiaria();

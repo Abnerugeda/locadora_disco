@@ -1,14 +1,14 @@
 package com.exemplo.locadora.negocio.entidade.veiculo;
 
-import com.exemplo.locadora.negocio.entidade.interfaces.Veiculo;
+import com.exemplo.locadora.negocio.entidade.interfaces.Flor;
 
-public class VeiculoVeiculo implements Veiculo {
+public class FlorVeiculo implements Flor {
     private String modelo;
     private String marca;
     private double precoDiaria;
     private boolean danificado;
 
-    public VeiculoVeiculo(String modelo, String marca, double precoDiaria, boolean danificado) {
+    public FlorVeiculo(String modelo, String marca, double precoDiaria, boolean danificado) {
         this.modelo = modelo;
         this.marca = marca;
         this.precoDiaria = precoDiaria;
